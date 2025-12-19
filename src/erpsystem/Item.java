@@ -42,37 +42,43 @@ public class Item {
         return minLimit;
     }
 
-    public void setQuantity(int quantity) {
-        if (quantity < 0){
-            quantity = 0;
-        }   
-        this.quantity = quantity;
-    }
-    
-    public void addQuantity(int amount) throws AllException.InvalidQuantityException{
-        if (amount > 0){
-            quantity += amount;
+    //SETTERS
+    public void setQuantity(int quantity) throws AllException.InvalidQuantityException {
+        if(quantity < 0){
+            throw new AllException.InvalidQuantityException("QUANTITY SHOULD BE GREATER THAN ZERO!");
         }
-        else {
-            throw new AllException.InvalidQuantityException("Can't add negative Quantity, Please add again");
-        }
+            this.quantity = quantity;
     }
-    
-    public boolean QuantityConsumption(int amount) throws AllException.InvalidQuantityException,
-            AllException.LowStockException{
+    //METHODS
+    public void addQuantity(int amount) throws AllException.InvalidQuantityException {
+        if(amount>=0)
+            this.quantity+=amount;
+        else
+            throw new AllException.InvalidQuantityException("CANNOT ADD NEGATIVE AMOUNT!");
+    }
+    public boolean QuantityConsumption(int amount) throws AllException.InvalidQuantityException,AllException.LowStockException{
         if (amount <= 0){
-            throw new AllException.InvalidQuantityException("Amount should be greater than zero");
+            throw new AllException.InvalidQuantityException("AMOUNT SHOULD BE GREATER THAN ZERO!");
         }
         if (quantity < amount){
-            throw new AllException.LowStockException("The quantity is low, you can't consumption the quantity now, please wait...");
+            throw new AllException.LowStockException("THERE IS NOT ENOUGH QUANTITY FOR CONSUMPTION!");
         }
-        this.quantity -= amount;   
+        this.quantity -= amount;
         return true;
     }
-    
+
     public boolean CheckLowStock(){
         return quantity <= minLimit;
     }
+    
+     public void setItemMinLimit(int itemMinLimit) throws AllException.InvalidNumberException {
+        if(itemMinLimit>=0)
+        this.minLimit = itemMinLimit;
+        else{
+            this.minLimit = 0;
+            throw new AllException.InvalidNumberException("MINIMUM LIMIT CANNOT BE NEGATIVE!");
+        }
+     }    
 
     @Override
     public String toString() {

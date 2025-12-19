@@ -25,8 +25,8 @@ public class Product {
     public Map<Item, Integer> getItems() {
         return items;
     }
-    // It's return the amount of itme and if there is no amount return 0
-    public int GetAmount(Item item){
+    
+    public int getAmountOfItemForProduct(Item item){
         return items.getOrDefault(item, 0);
     }
     
