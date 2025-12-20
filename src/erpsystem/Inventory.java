@@ -46,7 +46,7 @@ public class Inventory {
                 for (Map.Entry<Item, Integer> entry1 : itemIntegerMap.entrySet()) {
                     Item key1 = entry1.getKey();
                     Integer value1 = entry1.getValue();
-                    int newQuantity = key1.getQuantity() - value1;
+                    int newQuantity = key1.getQuantity() - (value1 * taskQuantity);
                     key1.setQuantity(newQuantity);
                     //Alert when reaching the minimum
                     if (key1.getQuantity() <= key1.getMinLimit())
@@ -62,7 +62,8 @@ public class Inventory {
         }
     }
     //adding a product to the inventory
-    public synchronized void addProduct(Product product){
+    public synchronized void addProduct(Product product,int quantityAdded){
+        for (int i=0;i<quantityAdded;i++)
         allProducts.add(product);
     }
     //adding an item to the inventory

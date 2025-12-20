@@ -39,8 +39,8 @@ public class ProductLine implements Runnable{
                             //Update the output piece by piece (in Mission class)
                             currentMission.updateProgress(1); 
                         }
-                    
-                    inventory.addProduct(currentMission.getAquiredProduct());
+                    inventory.addProduct(currentMission.getAquiredProduct(),currentMission.getOrderedQuantity());
+                    currentMission.setState(State.COMPLETED);
                     missions.poll();
                     System.out.println("Mission: " + currentMission.getMissionId() + " COMPLETED by: " + lineName);
                     
@@ -65,6 +65,7 @@ public class ProductLine implements Runnable{
                     Mission m = missions.peek();
                     m.setState(State.CANCELED);
                     missions.poll();
+                   // ErrorLogger.log(ex);
                     }
                 } 
                 catch (InterruptedException ex) {
@@ -87,7 +88,7 @@ public class ProductLine implements Runnable{
     //Return last massage 
     public String getLastErrorMessage() {
         String msg = lastErrorMessage;
-        lastErrorMessage = ""; // تصفير الرسالة بعد قراءتها
+        lastErrorMessage = ""; 
         return msg;
     }
     

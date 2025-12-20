@@ -111,12 +111,13 @@ public class ERPSystem {
 
             // 4. إنشاء خط الإنتاج
             // ملاحظة: تأكد أن الـ Constructor يقبل (ID, Name, Inventory)
-           ProductLine line1 = new ProductLine(1, "Alpha-Line", inventory);
-           line1.setLineState(LineState.ACTIVE);
+            ProductLine line1 = new ProductLine(1, "Alpha-Line", inventory);
+            line1.setLineState(LineState.ACTIVE);
             // 5. إنشاء المهمة
             // نطلب إنتاج 5 قطع
+            //اي فرشة رح تبين من هون
             Mission m1 = new Mission(101, p1, 5, "Customer_A", 
-                                    LocalDate.now(), LocalDate.now().plusDays(2), line1);
+            LocalDate.now(), LocalDate.now().plusDays(2), line1);
             
             // 6. إضافة المهمة للخط قبل تشغيله
             line1.addMission(m1);
@@ -134,14 +135,9 @@ public class ERPSystem {
                 
                 System.out.print("\rTime: " + i + "s | Done: " + m1.getDoneProducts() 
                                  + " | Progress: " + m1.getAccomplishLevel() + "%"
-                                 + " | State: " + m1.getState() + "\n");
+                                 + " | State: " + m1.getState() );
                 
-                // إذا اكتملت المهمة اخرج من الحلقة
-                if (m1.getState() == State.COMPLETED) {
-                    System.out.println("\n\n✅ SUCCESS: Mission Completed!\n");
-                    break;
-                }
-                
+
                 // تفقد إذا حدث خطأ في الخيط
                 String error = line1.getLastErrorMessage();
                 if (error != null && !error.isEmpty()) {
@@ -157,6 +153,6 @@ public class ERPSystem {
         } catch (Exception e) {
             System.out.println("\n❌ CRITICAL SYSTEM ERROR: ");
             e.printStackTrace();
-        }ٍ
+        }
     }
 }

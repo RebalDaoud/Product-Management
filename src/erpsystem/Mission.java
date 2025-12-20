@@ -13,7 +13,7 @@ public class Mission {
     private State state;
     private ProductLine productLine;
     private double accomplishLevel;
-    private int doneProducts;
+    private int doneProducts = 0;
     
     //CONSTRUCTOR
     public Mission(int missionId,Product acquiredProduct,int orderedQuantity,String client,LocalDate startingDate,
