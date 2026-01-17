@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/ERPSystem.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/Item.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/Product.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/ProductLine.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/Mission.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/Inventory.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/FactoryController.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/LineState.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/State.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/AllException.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/I/O/ErrorLogger.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/I/O/ErrorsReader.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/I/O/InventoryCSVReader.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/I/O/InventoryWriter.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/I/O/MissionHistoryWriter.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/swing/LoginFrame.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/swing/MainFrame.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/swing/ManagerPanel.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/swing/SupervisorPanel.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/erpsystem/swing/DialogUtils.java</file>
+            <file>file:/D:/NetBeansProjects/ERPSystem/src/Music/Music.java</file>
+        </group>
+    </open-files>
+</project-private>
